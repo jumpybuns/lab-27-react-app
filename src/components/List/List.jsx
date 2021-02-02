@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
+import { getCharacters } from '../../services/xFilesAPI';
+import CharacterList from './CharacterList';
 
-//fetch call
+export default class List extends Component {
+  state = {
+    characters: [],
+  };
 
-//handler
+  componentDidMount() {
+    getCharacters().then((characters) => this.setState({ characters }));
+  }
 
-export default class MainPage extends Component {
   render() {
+    const { characters } = this.state;
+
     return (
       <div>
-        <button>Click Me</button>
+        <CharacterList characters={characters} />
       </div>
     );
   }
