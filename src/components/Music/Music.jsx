@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Music.css';
 
 function Music() {
-  const audio = new Audio('../../song.mp3');
+  const audio = new Audio('../../../public/song.mp3');
 
   const start = () => {
     audio.play();
