@@ -1,0 +1,22 @@
+.image {
+  height: 25vh;
+  width: auto;
+}
+
+.name {
+  font-size: 4rem;
+}
+
+.list {
+  list-style-type: none;
+  /* padding: 10; */
+  margin: 10;
+  text-align: end;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

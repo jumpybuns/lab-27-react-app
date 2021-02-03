@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import styles from './List.css';
+import styles from './Character.css';
 
 const Character = ({ name, image }) => (
   <Link to={`/detail/${name}`}>
-    <figure>
+    <figure className={styles.list}>
       <img className={styles.image} src={image} />
       <figcaption className={styles.name}>{name}</figcaption>
     </figure>
