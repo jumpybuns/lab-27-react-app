@@ -7,7 +7,7 @@ export const getCharacters = () => {
 export const getCharacter = () => {
   return fetch(
     `https://xfiles-api.herokuapp.com/api/v1/characters?character=
-    ${this.props.match.params.character}`
+    ${props.match.params.character}`
   )
     .then((res) => res.json())
     .then((json) => json.results);

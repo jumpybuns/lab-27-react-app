@@ -1,25 +1,30 @@
 import React from 'react';
-import Character from './Character';
+import styles from './Detail.css';
 import PropTypes from 'prop-types';
 
-const Detail = ({ details }) => {
-  const characterElements = details.map((character) => (
-    <li key={character.id}>
-      <Character {...character} />
-    </li>
-  ));
+export default class Detail extends Component {
+  state = {
+    detail: [],
+  };
 
-  return <ul>{characterElements}</ul>;
-};
+  componentDidMount() {
+    getCharacter();
+  }
 
+  getCharacter = () => {
+    return fetch(
+      `https://xfiles-api.herokuapp.com/api/v1/characters?character=${this.props.match.params.detail}`
+    )
+      .then((res) => res.json())
+      .then((json) => json.results);
+  };
+  render() {
+    const { characters } = this.state;
+
+    return <CharacterList characters={characters} />;
+  }
+}
 Detail.propTypes = {
-  details: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
-    }).isRequired
-  ),
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 };
-
-export default Detail;

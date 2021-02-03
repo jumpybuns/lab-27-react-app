@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './List.css';
 
-const Character = ({ name, image, status }) => (
+const Character = ({ name, image }) => (
   <Link to={`/detail/${name}`}>
     <figure>
       <img className={styles.image} src={image} />
       <figcaption className={styles.name}>{name}</figcaption>
-      <figcaption className={styles.status}>{status}</figcaption>
     </figure>
   </Link>
 );
@@ -16,7 +15,6 @@ const Character = ({ name, image, status }) => (
 Character.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  status: PropTypes.string.isRequired,
 };
 
 export default Character;

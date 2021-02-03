@@ -12,11 +12,6 @@ body {
   font-size: 5rem;
 }
 
-.status {
-  font-size: 4rem;
-  color: red;
-}
-
 .list {
   list-style-type: none;
 }
