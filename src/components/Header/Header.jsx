@@ -5,7 +5,7 @@ export default class Header extends Component {
   render() {
     return (
       <div>
-        <img className={styles.banner} src="../../../public/banner.jpg" />
+        <img className={styles.banner} src="../../banner.jpg" />
       </div>
     );
   }
