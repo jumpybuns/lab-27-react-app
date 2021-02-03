@@ -1,12 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import styles from './List.css';
 
 const Character = ({ name, image, status }) => (
-  <figure>
-    <img src={image} />
-    <figcaption>{name}</figcaption>
-    <figcaption>{status}</figcaption>
-  </figure>
+  <Link to={`/detail/${name}`}>
+    <figure>
+      <img className={styles.image} src={image} />
+      <figcaption className={styles.name}>{name}</figcaption>
+      <figcaption className={styles.status}>{status}</figcaption>
+    </figure>
+  </Link>
 );
 
 Character.propTypes = {

@@ -3,3 +3,12 @@ export const getCharacters = () => {
     .then((res) => res.json())
     .then((json) => json.results);
 };
+
+export const getCharacter = () => {
+  return fetch(
+    `https://xfiles-api.herokuapp.com/api/v1/characters?character=
+    ${this.props.match.params.character}`
+  )
+    .then((res) => res.json())
+    .then((json) => json.results);
+};

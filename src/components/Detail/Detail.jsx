@@ -1,11 +1,10 @@
 import React from 'react';
 import Character from './Character';
 import PropTypes from 'prop-types';
-import styles from './List.css';
 
-const CharacterList = ({ characters }) => {
-  const characterElements = characters.map((character) => (
-    <li className={styles.list} key={character.id}>
+const Detail = ({ details }) => {
+  const characterElements = details.map((character) => (
+    <li key={character.id}>
       <Character {...character} />
     </li>
   ));
@@ -13,8 +12,8 @@ const CharacterList = ({ characters }) => {
   return <ul>{characterElements}</ul>;
 };
 
-CharacterList.propTypes = {
-  characters: PropTypes.arrayOf(
+Detail.propTypes = {
+  details: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
@@ -23,4 +22,4 @@ CharacterList.propTypes = {
   ),
 };
 
-export default CharacterList;
+export default Detail;

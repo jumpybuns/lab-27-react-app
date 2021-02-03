@@ -1,0 +1,22 @@
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.image {
+  height: 50vh;
+  width: auto;
+}
+
+.name {
+  font-size: 5rem;
+}
+
+.status {
+  font-size: 4rem;
+  color: red;
+}
+
+.list {
+  list-style-type: none;
+}
