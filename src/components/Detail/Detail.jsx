@@ -20,7 +20,6 @@ export default class Detail extends Component {
     return (
       <>
         <Link to="/">Return Home</Link>
-        {/* <Character {...character} /> */}
         <h1>{character[0]?.name}</h1>
         <img src={character[0]?.image} />
         <h2>{character[0]?.occupation}</h2>
