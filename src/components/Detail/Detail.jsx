@@ -1,27 +1,26 @@
 import React, { Component } from 'react';
-// import Character from '../List/Character';
-// import styles from './Detail.css';
+import { getCharacter } from '../../services/getCharacter';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 export default class Detail extends Component {
   state = {
     character: [],
   };
-  getCharacter = () => {
-    return fetch(
-      `https://xfiles-api.herokuapp.com/api/v1/characters/${this.props.match.params.name}`
-    ).then((res) => res.json());
-  };
 
   componentDidMount() {
-    this.getCharacter().then((character) => this.setState({ character }));
+    getCharacter(this.props.match.params.name).then((character) =>
+      this.setState({ character })
+    );
   }
 
   render() {
     const { character } = this.state;
-    console.log(character);
+
     return (
       <>
+        <Link to="/">Return Home</Link>
+        {/* <Character {...character} /> */}
         <h1>{character[0]?.name}</h1>
         <img src={character[0]?.image} />
         <h2>{character[0]?.occupation}</h2>
@@ -33,4 +32,6 @@ export default class Detail extends Component {
 Detail.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  match: PropTypes.string.isRequired,
+  params: PropTypes.string.isRequired,
 };
