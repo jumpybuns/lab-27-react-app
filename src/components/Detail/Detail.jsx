@@ -1,27 +1,33 @@
-import React from 'react';
-import styles from './Detail.css';
+import React, { Component } from 'react';
+// import Character from '../List/Character';
+// import styles from './Detail.css';
 import PropTypes from 'prop-types';
 
 export default class Detail extends Component {
   state = {
-    detail: [],
+    character: [],
+  };
+  getCharacter = () => {
+    return fetch(
+      `https://xfiles-api.herokuapp.com/api/v1/characters/${this.props.match.params.name}`
+    ).then((res) => res.json());
   };
 
   componentDidMount() {
-    getCharacter();
+    this.getCharacter().then((character) => this.setState({ character }));
   }
 
-  getCharacter = () => {
-    return fetch(
-      `https://xfiles-api.herokuapp.com/api/v1/characters?character=${this.props.match.params.detail}`
-    )
-      .then((res) => res.json())
-      .then((json) => json.results);
-  };
   render() {
-    const { characters } = this.state;
-
-    return <CharacterList characters={characters} />;
+    const { character } = this.state;
+    console.log(character);
+    return (
+      <>
+        <h1>{character[0]?.name}</h1>
+        <img src={character[0]?.image} />
+        <h2>{character[0]?.occupation}</h2>
+        <h3>{character[0]?.description}</h3>
+      </>
+    );
   }
 }
 Detail.propTypes = {
