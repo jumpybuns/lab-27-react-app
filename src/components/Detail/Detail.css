@@ -1,0 +1,10 @@
+body {
+  color: yellow;
+}
+
+.homeLink {
+  color: pink;
+  font-size: 4rem;
+  position: relative;
+  left: 1200px;
+}
