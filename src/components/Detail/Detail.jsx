@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { getCharacter } from '../../services/getCharacter';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import styles from './Detail.css';
 
 export default class Detail extends Component {
   state = {
@@ -19,7 +20,9 @@ export default class Detail extends Component {
 
     return (
       <>
-        <Link to="/">Return Home</Link>
+        <Link className={styles.homeLink} to="/">
+          Return Home
+        </Link>
         <h1>{character[0]?.name}</h1>
         <img src={character[0]?.image} />
         <h2>{character[0]?.occupation}</h2>

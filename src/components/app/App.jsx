@@ -4,11 +4,16 @@ import List from '../List/List.jsx';
 import Detail from '../Detail/Detail';
 import Header from '../Header/Header';
 import Music from '../Music/Music';
+import background from '../../../public/background.jpg';
 
 export default class App extends Component {
   render() {
     return (
-      <div>
+      <div
+        style={{
+          backgroundImage: `url(${background})`,
+        }}
+      >
         <Header />
         <Music />
         <Router>

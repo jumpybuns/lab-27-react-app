@@ -4,6 +4,8 @@
 }
 
 .name {
+  text-decoration: none;
+  color: yellow;
   font-size: 4rem;
 }
 
